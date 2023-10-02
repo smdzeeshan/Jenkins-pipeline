@@ -12,4 +12,16 @@ pipeline{
             }
         }
     }
+    post {
+        always {
+            sh 'echo "I will always run after stages.."'
+        }
+
+        success {
+            sh 'echo "Success message from pipeline-post"'
+        }
+        failure {
+            sh 'echo "Failure message from pipeline-post"'
+        }
+    }
 }
